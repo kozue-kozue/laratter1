@@ -21,7 +21,7 @@ class CommentController extends Controller
      */
     public function create(Tweet $tweet)
     {
-    return view('tweets.comments.create', compact('tweet'));
+      return view('tweets.comments.create', compact('tweet'));
         //
     }
 
@@ -47,7 +47,8 @@ class CommentController extends Controller
      */
     public function show(Tweet $tweet, Comment $comment)
     {
-        return view('tweets.comments.show', compact('tweet', 'comment'));
+    $tweet->load('comments');
+    return view('tweets.comments.show', compact('tweet', 'comment'));
     }
 
     /**
