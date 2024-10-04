@@ -97,6 +97,9 @@
       <x-responsive-nav-link :href="route('profile.show', auth()->user())" :active="request()->routeIs('profile.show')">
         {{ __('マイページ') }}
       </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('tweets.liked', auth()->user())" :active="request()->routeIs('tweets.liked')">
+        {{ __('いいねツイート') }}
+      </x-responsive-nav-link>
     </div>
 
     <!-- Responsive Settings Options -->
