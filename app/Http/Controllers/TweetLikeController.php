@@ -18,6 +18,12 @@ class TweetLikeController extends Controller
     return view('tweets.index', compact('tweets'));
     }
 
+    public function likedTweets()
+{
+    $likedTweets = auth()->user()->likes()->with('user')->get();
+    return view('tweets.liked-tweets', compact('likedTweets'));
+}
+
     /**
      * Show the form for creating a new resource.
      */
